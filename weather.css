@@ -33,7 +33,7 @@ img{
 }
 .wallpaper-image{
     position: absolute;
-    top:5rem;
+    top:5.8rem;
     width:400px;
     border-radius: 10px;
 }
@@ -47,7 +47,7 @@ img{
     height: 400px;
     text-align: center;
     border:1px soild green;
-    background-image: url("cloudyBack.jpg");
+    background-image: url("sunnyBack2.jpg");
     border-radius: 10px;  
     transform: scale(1);
 }
