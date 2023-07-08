@@ -33,7 +33,7 @@ async function checkWeather(city){
         if(data.weather[0].main === 'Rain'){
         document.querySelector(".weather_container").style.backgroundImage = 'url("rainBack3.jpg")';
         document.querySelector(".city").innerHTML = data.name;
-        document.querySelector(".weather_condition").src = "rainThunder.jpeg";
+        document.querySelector(".weather_condition").src = "runThunder.jpeg";
         degrees.innerHTML = Math.round(data.wind.deg) + " °C";
         degree.innerHTML = Math.round(data.wind.deg) + " °C";
         measurement.innerHTML = data.wind.speed + " km/h";
