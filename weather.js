@@ -19,7 +19,7 @@ async function checkWeather(city){
     const response = await fetch(apiUrl + city +`&appid=${apikey}`);
     var data = await response.json();
     console.log(data);
-    if(data.weather[0].main = 'clouds'){
+    if(data.weather[0].main === 'Clouds'){
     document.querySelector(".weather_container").style.backgroundImage = 'url("cloudBack2.webp")';
     document.querySelector(".city").innerHTML = data.name;
     document.querySelector(".weather_condition").src = "sunny.jpeg";
@@ -29,16 +29,19 @@ async function checkWeather(city){
     temperature.innerHTML = data.weather[0].main;
     measurementState.innerHTML = data.weather[0].main;
     }
-    else if(data.weather[0].main = 'rain'){
+    else{
+        if(data.weather[0].main === 'Rain'){
         document.querySelector(".weather_container").style.backgroundImage = 'url("rainBack3.jpg")';
         document.querySelector(".city").innerHTML = data.name;
-        document.querySelector(".weather_condition").src = "rain.png";
+        document.querySelector(".weather_condition").src = "rainThunder.jpeg";
         degrees.innerHTML = Math.round(data.wind.deg) + " °C";
         degree.innerHTML = Math.round(data.wind.deg) + " °C";
         measurement.innerHTML = data.wind.speed + " km/h";
         temperature.innerHTML = data.weather[0].main;
         measurementState.innerHTML = data.weather[0].main;
-    }else if(data.weather[0].main = 'sunny'){
+    }
+    else{
+        if(data.weather[0].main === 'Snow'){
         document.querySelector(".weather_container").style.backgroundImage = 'url("sunnyBack.jpg")';
         document.querySelector(".city").innerHTML = data.name;
         document.querySelector(".weather_condition").src = "sunny.jpeg";
@@ -48,7 +51,8 @@ async function checkWeather(city){
         temperature.innerHTML = data.weather[0].main;
         measurementState.innerHTML = data.weather[0].main;
     }
-    else if(data.weather[0].main = 'night'){
+    else{ 
+        if(data.weather[0].main === 'Drizzle'){
         document.querySelector(".weather_container").style.backgroundImage = 'url("dawnBack.jpg")';
         document.querySelector(".city").innerHTML = data.name;
         document.querySelector(".weather_condition").src = "night.webp";
@@ -58,6 +62,33 @@ async function checkWeather(city){
         temperature.innerHTML = data.weather[0].main;
         measurementState.innerHTML = data.weather[0].main;
     }
+    else{ 
+        if(data.weather[0].main === 'Clear'){
+        document.querySelector(".weather_container").style.backgroundImage = 'url("dawnBack.jpg")';
+        document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".weather_condition").src = "sunnyBack2.jpg";
+        degrees.innerHTML = Math.round(data.wind.deg) + " °C";
+        degree.innerHTML = Math.round(data.wind.deg) + " °C";
+        measurement.innerHTML = data.wind.speed + " km/h";
+        temperature.innerHTML = data.weather[0].main;
+        measurementState.innerHTML = data.weather[0].main;
+    }
+    else{ 
+        if(data.weather[0].main === 'Thunderstorm'){
+        document.querySelector(".weather_container").style.backgroundImage = 'url("thunderStorm1.jpeg")';
+        document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".weather_condition").src = "thundericon.png";
+        degrees.innerHTML = Math.round(data.wind.deg) + " °C";
+        degree.innerHTML = Math.round(data.wind.deg) + " °C";
+        measurement.innerHTML = data.wind.speed + " km/h";
+        temperature.innerHTML = data.weather[0].main;
+        measurementState.innerHTML = data.weather[0].main;
+    }
+}
+}
+}
+    }
+}
 }
 
 searchBtn.addEventListener("click", ()=>{
